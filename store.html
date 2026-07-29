@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heena Merch Store</title>
+
+  <!-- Browser Tab Icon (Favicon) -->
+  <link rel="icon" type="image/png" href="C:\Users\rocha\Downloads\Heena\Heena trans w.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Albert Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Albert Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0061bc',
+              dark: '#0a0a0a',
+              card: '#121212',
+              border: '#262626'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth image zoom on hover */
+    .img-hover-zoom {
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .group:hover .img-hover-zoom {
+      transform: scale(1.08);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0061bc;
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-blue selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-blue-950/80 border-b border-blue-900/40 text-blue-200 text-xs py-2 px-4 text-center font-medium tracking-widest uppercase backdrop-blur-md">
+    <span>✨ Official Heena Concert Merchandise — In Stock & Ready to Ship ✨</span>
+  </div>
+
+  <!-- MAIN NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Mobile Menu Trigger -->
+      <button class="md:hidden text-gray-300 hover:text-white p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="Heena trans w.png" alt="Heena Logo" class="w-12 h-12 object-contain group-hover:rotate-05 transition-transform duration-500">
+        <span class="text-2xl font-black tracking-tight text-white uppercase">Merch</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-widest uppercase">
+        <a href="#store" class="text-white hover:text-brand-blue transition-colors">Catalog</a>
+        <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="flex items-center gap-5">
+        <!-- Search Icon -->
+        <button aria-label="Search" class="text-gray-300 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+        <!-- Shopping Bag Icon -->
+        <button aria-label="Cart" class="relative text-gray-300 hover:text-white transition-colors p-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+          <span class="absolute -top-1 -right-1 bg-brand-blue text-white text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- HERO SECTION WITH VIDEO BACKGROUND -->
+    <section class="relative h-[60vh] min-h-[440px] w-full overflow-hidden flex items-center justify-center">
+      <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-40">
+        <source src="BG VIDEO.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
+      
+      <div class="relative z-10 text-center px-4 max-w-3xl space-y-4">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-widest uppercase">
+          Official Limited Collection
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight uppercase">
+          HEENA MERCHANDISE
+        </h1>
+        <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          Exclusive apparel, collectibles, and accessories crafted for Sri Lanka's ultimate musical concert experience.
+        </p>
+        <div class="pt-2">
+          <a href="#store" class="inline-flex items-center gap-2 bg-white text-black hover:bg-brand-blue hover:text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 shadow-xl">
+            <span>Explore Drops</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MERCHANDISE CATALOG GRID (3x2 Sequence: T-Shirts -> Mugs -> Scarves) -->
+<section id="store" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+    <!-- ROW 1 / ITEM 1: T-Shirt (Ocean Blue) -->
+    <div class="group bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-neutral-700">
+      <div>
+        <div class="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+          <img src="10.webp" alt="Tshirt Ocean Blue" class="w-full h-full object-cover img-hover-zoom">
+          <span class="absolute top-3 left-3 bg-emerald-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+            In Stock
+          </span>
+        </div>
+        
+        <div class="p-5 space-y-3">
+          <h3 class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Tshirt - Ocean Blue</h3>
+          
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-800 text-gray-400 border border-neutral-700">FREE SIZE</span>
+          </div>
+
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-3.5 h-3.5 rounded-full bg-blue-600 ring-2 ring-brand-blue ring-offset-2 ring-offset-brand-card"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-neutral-800/60 mt-2">
+        <div>
+          <span class="text-xs text-gray-400 block font-medium">Price</span>
+          <span class="text-lg font-extrabold text-white">LKR 3,000</span>
+        </div>
+        <button class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/30 active:scale-95">
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    <!-- ROW 1 / ITEM 2: T-Shirt (Sea Green) -->
+    <div class="group bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-neutral-700">
+      <div>
+        <div class="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+          <img src="4.webp" alt="Tshirt Sea Green" class="w-full h-full object-cover img-hover-zoom">
+          <span class="absolute top-3 left-3 bg-emerald-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+            In Stock
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <h3 class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Tshirt - Sea Green</h3>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-800 text-gray-400 border border-neutral-700">FREE SIZE</span>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-3.5 h-3.5 rounded-full bg-emerald-600"></span>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-neutral-800/60 mt-2">
+        <div>
+          <span class="text-xs text-gray-400 block font-medium">Price</span>
+          <span class="text-lg font-extrabold text-white">LKR 3,000</span>
+        </div>
+        <button class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/30 active:scale-95">
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    <!-- ROW 1 / ITEM 3: Mug (Yellow) -->
+    <div class="group bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-neutral-700">
+      <div>
+        <div class="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+          <img src="7.webp" alt="Mug Yellow" class="w-full h-full object-cover img-hover-zoom">
+          <span class="absolute top-3 left-3 bg-emerald-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+            In Stock
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <h3 class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Mug - Yellow</h3>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-800 text-gray-400 border border-neutral-700">CERAMIC</span>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-3.5 h-3.5 rounded-full bg-amber-400"></span>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-neutral-800/60 mt-2">
+        <div>
+          <span class="text-xs text-gray-400 block font-medium">Price</span>
+          <span class="text-lg font-extrabold text-white">LKR 1,000</span>
+        </div>
+        <button class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/30 active:scale-95">
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    <!-- ROW 2 / ITEM 4: Mug (Blue) -->
+    <div class="group bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-neutral-700">
+      <div>
+        <div class="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+          <img src="8.webp" alt="Mug Blue" class="w-full h-full object-cover img-hover-zoom">
+          <span class="absolute top-3 left-3 bg-emerald-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+            In Stock
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <h3 class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Mug - Blue</h3>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-800 text-gray-400 border border-neutral-700">CERAMIC</span>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-3.5 h-3.5 rounded-full bg-blue-500"></span>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-neutral-800/60 mt-2">
+        <div>
+          <span class="text-xs text-gray-400 block font-medium">Price</span>
+          <span class="text-lg font-extrabold text-white">LKR 1,000</span>
+        </div>
+        <button class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/30 active:scale-95">
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    <!-- ROW 2 / ITEM 5: Scarf (Red) -->
+    <div class="group bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-neutral-700">
+      <div>
+        <div class="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+          <img src="6.webp" alt="Scarves Red" class="w-full h-full object-cover img-hover-zoom">
+          <span class="absolute top-3 left-3 bg-emerald-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+            In Stock
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <h3 class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Scarves - Red</h3>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-800 text-gray-400 border border-neutral-700">COTTON</span>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-3.5 h-3.5 rounded-full bg-red-600"></span>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-neutral-800/60 mt-2">
+        <div>
+          <span class="text-xs text-gray-400 block font-medium">Price</span>
+          <span class="text-lg font-extrabold text-white">LKR 900</span>
+        </div>
+        <button class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/30 active:scale-95">
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    <!-- ROW 2 / ITEM 6: Scarf (Yellow) -->
+    <div class="group bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-neutral-700">
+      <div>
+        <div class="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+          <img src="11.webp" alt="Scarves Yellow" class="w-full h-full object-cover img-hover-zoom">
+          <span class="absolute top-3 left-3 bg-emerald-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+            In Stock
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <h3 class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Scarves - Yellow</h3>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-800 text-gray-400 border border-neutral-700">COTTON</span>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-neutral-800/60 mt-2">
+        <div>
+          <span class="text-xs text-gray-400 block font-medium">Price</span>
+          <span class="text-lg font-extrabold text-white">LKR 900</span>
+        </div>
+        <button class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/30 active:scale-95">
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer id="about" class="bg-black border-t border-brand-border pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="Heena trans w.png" alt="Heena" class="w-12 h-12 object-contain">
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            The ultimate concert experience by the Univ. of Vavuniya 24/25 Batch. High-quality limited edition apparel & official event merchandise.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="#store" class="hover:text-blue-400 transition-colors">All Merchandise</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Newsletter -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Stay Updated</h4>
+          <p class="text-xs text-gray-400">Subscribe for early access to future drops and concert tickets.</p>
+          <div class="flex items-center gap-2">
+            <input type="email" placeholder="Enter your email" class="bg-brand-card border border-neutral-800 text-white text-xs px-4 py-3 rounded-xl focus:outline-none focus:border-brand-blue flex-grow">
+            <button class="bg-brand-blue hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright & Payment Badges -->
+      <div class="border-t border-neutral-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <p>© 2026 HEENA. All rights reserved. Powered by Brick Developers.</p>
+        <div class="flex items-center gap-3">
+          <img loading="lazy" class="lazyloadhdt" src="C:\Users\rocha\Downloads\Heena\visa.svg" alt="Visa" width="40" height="24">
+          <img loading="lazy" class="lazyloadhdt" src="C:\Users\rocha\Downloads\Heena\mastercard.svg" alt="MasterCard" width="40" height="24">
+          <img loading="lazy" class="lazyloadhdt" src="C:\Users\rocha\Downloads\Heena\mintpay.png" alt="MintPay" width="40" height="24">
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

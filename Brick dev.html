@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brik | Liquid Motion</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #0095ff; /* Keeping the sharp blue from image_b6ec77.png */
+            --text-main: #ffffff;
+            --text-dim: #b3b3b3;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Liquid Gooey Container */
+        .liquid-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            filter: url('#gooey'); /* Links to the SVG filter below */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Custom "Brick" block shapes */
+        .brick-part {
+            position: absolute;
+            width: 140px;
+            height: 75px;
+            background: var(--accent-color);
+            border-radius: 16px; /* Smooth corners for better melting transition */
+            animation: brick-melt 5s infinite ease-in-out;
+        }
+
+        /* Top-left brick half */
+        .part-1 {
+            transform: translate(-35px, -30px);
+        }
+
+        /* Bottom-right brick half */
+        .part-2 {
+            transform: translate(35px, 30px);
+            animation-delay: -2.5s; /* Offsets the timing so they slide against each other */
+            background: #0076cc; /* Slightly darker shade for depth, like image_b6ec77.png */
+        }
+
+        /* The sliding, melting animation loop */
+        @keyframes brick-melt {
+            0%, 100% { 
+                transform: translate(-45px, -35px); 
+            }
+            50% { 
+                transform: translate(45px, 35px); 
+            }
+        }
+
+        .description {
+            max-width: 600px;
+            line-height: 1.6;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            padding: 0 20px;
+        }
+
+        .contact {
+            margin-top: 1.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            border: 1px solid #222;
+            padding: 8px 24px;
+            border-radius: 20px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-color);
+            color: white;
+            background: rgba(0, 149, 255, 0.1);
+        }
+
+        /* Hidden SVG Filter element */
+        svg {
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Brik</h1>
+
+    <!-- The Liquid Animated Logo -->
+    <div class="liquid-container">
+        <div class="brick-part part-1"></div>
+        <div class="brick-part part-2"></div>
+    </div>
+
+    <!-- Layout matched to image_b6ec77.png -->
+    <p class="description">
+        We are a Software Development Company specializing in building solid digital foundations. 
+        From modular Web Applications to robust Mobile Solutions, cross-platform systems, and tailored AI architectures. 
+        With precision engineering and an agile approach, we build the building blocks of modern tech.
+    </p>
+
+    <a href="mailto:rochanadah@gmail.com" class="contact">🤝 Let's collaborate : info@brik.dev</a>
+
+    <div class="social-links">
+        <a href="#" class="btn">Telegram</a>
+        <a href="#" class="btn">Github</a>
+        <a href="#" class="btn">Linkedin</a>
+        <a href="#" class="btn">WhatsApp</a>
+    </div>
+
+    <!-- The Gooey Filter Engine -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- Blurs the two blocks together -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+                <!-- Sharpens the alpha channel to make the blurred gap look like liquid skin -->
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="gooey" />
+                <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+</body>
+</html>

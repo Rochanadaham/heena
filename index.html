@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="si-LK" class="h-full antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heena | හීන</title>
+  <meta name="description" content="Heena (හීන) is Sri Lanka's premier music concert experience — a soulful evening featuring Kasun Kalhara, Ridma Weerawardena, Suneera Sumanga, Lakshitha Mihiran, Siyumini Opayangi, and Manuranga Wijesekara.">
+  
+  <!-- Browser Tab Icon (Favicon) -->
+  <link rel="icon" type="image/png" href="C:\Users\rocha\Downloads\Heena\Heena trans w.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+    }
+
+    /* Falling Flower Animation Keyframes */
+    @keyframes flower-fall {
+      0% { transform: translateY(-12vh); opacity: 0; }
+      5% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { transform: translateY(112vh); opacity: 0; }
+    }
+    @keyframes flower-sway-wind {
+      0% { transform: translateX(0px); }
+      33% { transform: translateX(110px); }
+      66% { transform: translateX(-50px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes flower-sway-slow-wind {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(-75px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes flower-sway-direct {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(20px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes flower-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .animate-flower-fall { animation-name: flower-fall; animation-timing-function: linear; animation-iteration-count: infinite; }
+    .animate-flower-sway-1 { animation-name: flower-sway-wind; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    .animate-flower-sway-2 { animation-name: flower-sway-slow-wind; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    .animate-flower-sway-3 { animation-name: flower-sway-direct; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    .animate-flower-spin { animation-name: flower-spin; animation-timing-function: linear; animation-iteration-count: infinite; }
+  </style>
+</head>
+<body class="min-h-full flex flex-col bg-white text-gray-900 relative">
+
+  <!-- ================= FALLING ARALIYA FLOWERS ================= -->
+  <div class="fixed inset-0 pointer-events-none z-50 overflow-hidden" aria-hidden="true">
+    
+    <!-- SVG Defs for reusable realistic Araliya (Plumeria) flower -->
+    <svg class="hidden">
+      <defs>
+        <g id="araliya-flower">
+          <path d="M50 50 C38 22 42 2 60 5 C75 8 72 30 50 50" fill="#FFFFFF" stroke="#E2D1C3" stroke-width="0.8"/>
+          <path d="M50 50 C38 22 42 2 60 5 C75 8 72 30 50 50" fill="#FFFFFF" stroke="#E2D1C3" stroke-width="0.8" transform="rotate(72 50 50)"/>
+          <path d="M50 50 C38 22 42 2 60 5 C75 8 72 30 50 50" fill="#FFFFFF" stroke="#E2D1C3" stroke-width="0.8" transform="rotate(144 50 50)"/>
+          <path d="M50 50 C38 22 42 2 60 5 C75 8 72 30 50 50" fill="#FFFFFF" stroke="#E2D1C3" stroke-width="0.8" transform="rotate(216 50 50)"/>
+          <path d="M50 50 C38 22 42 2 60 5 C75 8 72 30 50 50" fill="#FFFFFF" stroke="#E2D1C3" stroke-width="0.8" transform="rotate(288 50 50)"/>
+          <circle cx="50" cy="50" r="12" fill="url(#araliyaYellow)"/>
+        </g>
+        <radialGradient id="araliyaYellow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFD000" />
+          <stop offset="70%" stop-color="#FFB300" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <!-- Animated Flower Instances -->
+    <div class="absolute top-0 animate-flower-fall" style="left: 12%; width: 50px; height: 50px; animation-duration: 12.5s; animation-delay: -4.4s;">
+      <div class="w-full h-full animate-flower-sway-1" style="animation-duration: 8.5s;">
+        <div class="w-full h-full animate-flower-spin" style="animation-duration: 8.2s; animation-direction: reverse;">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow"><use href="#araliya-flower"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 animate-flower-fall" style="left: 28%; width: 32px; height: 32px; animation-duration: 14.7s; animation-delay: -1.8s;">
+      <div class="w-full h-full animate-flower-sway-2" style="animation-duration: 10.3s;">
+        <div class="w-full h-full animate-flower-spin" style="animation-duration: 8.3s;">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow"><use href="#araliya-flower"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 animate-flower-fall" style="left: 44%; width: 42px; height: 42px; animation-duration: 11.7s; animation-delay: -2.3s;">
+      <div class="w-full h-full animate-flower-sway-3" style="animation-duration: 8.2s;">
+        <div class="w-full h-full animate-flower-spin" style="animation-duration: 5.7s; animation-direction: reverse;">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow"><use href="#araliya-flower"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 animate-flower-fall" style="left: 63%; width: 52px; height: 52px; animation-duration: 16.8s; animation-delay: -1.7s;">
+      <div class="w-full h-full animate-flower-sway-1" style="animation-duration: 11.7s;">
+        <div class="w-full h-full animate-flower-spin" style="animation-duration: 7.8s;">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow"><use href="#araliya-flower"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 animate-flower-fall" style="left: 78%; width: 36px; height: 36px; animation-duration: 22.9s; animation-delay: -0.8s;">
+      <div class="w-full h-full animate-flower-sway-2" style="animation-duration: 16s;">
+        <div class="w-full h-full animate-flower-spin" style="animation-duration: 3.8s;">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow"><use href="#araliya-flower"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 animate-flower-fall" style="left: 89%; width: 46px; height: 46px; animation-duration: 15.8s; animation-delay: -2.3s;">
+      <div class="w-full h-full animate-flower-sway-3" style="animation-duration: 11.1s;">
+        <div class="w-full h-full animate-flower-spin" style="animation-duration: 4.2s;">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow"><use href="#araliya-flower"/></svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <main class="flex min-h-screen flex-col items-center justify-between">
+
+    <!-- ================= HERO BANNER SECTION ================= -->
+    <section class="relative w-full h-[60vh] md:h-screen overflow-hidden bg-gray-900 flex items-center justify-center">
+      
+      <!-- Desktop Hero Image -->
+      <img src="C:\Users\rocha\Downloads\Heena\Heena.jpg" class="hidden md:block absolute inset-0 w-full h-full object-cover object-center opacity-85" />
+      
+      <!-- Mobile Hero Image -->
+      <img src="C:\Users\rocha\Downloads\Heena\Heena.jpg"  class="block md:hidden absolute inset-0 w-full h-full object-cover object-center opacity-85" />
+
+      <!-- Centered Heena Logo / Title Overlay -->
+      <div class="relative z-10 flex flex-col items-center text-center px-4">
+        <img src="C:\Users\rocha\Downloads\Heena\Heena trans.png" alt="හීන - Heena" class="h-32 md:h-52 w-auto filter drop-shadow-xl invert brightness-200" />
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-widest mt-4 drop-shadow">LIVE IN CONCERT</h1>
+      </div>
+
+      <!-- Scroll Down Button (Option 2: Minimalist Circle) -->
+<button 
+  aria-label="Scroll down" 
+  onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" 
+  class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-black/50 hover:border-white/40 transition-all duration-300 shadow-lg group cursor-pointer"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+</button>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="w-full bg-white flex justify-center py-12 md:py-16">
+      <div class="container px-4 md:px-6">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#0061bc] mb-6 tracking-tight">Heena - හීන</h2>
+          <p class="text-[#5f6368] text-sm md:text-base leading-relaxed max-w-7xl text-justify">
+            Heena (හීන) is far more than just a musical event it’s a feeling, a shared journey, and an unforgettable experience where creativity meets deep emotion. Proudly presented by the 24/25 Batch of the University of Vavuniya, Heena brings together soulful melodies, vibrant batch energy, and an atmosphere crafted to leave a lasting mark on your heart.We warmly invite you to step into this magical night with us. Come for the music, immerse yourself in the vibe, and leave with memories that linger long after the final note.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TICKETS & ADD-ONS ================= -->
+    <section class="w-full bg-[#FFF8F2] px-4 md:px-0">
+      <div class="w-full h-12 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
+      
+      <div class="container mx-auto flex flex-col items-center py-2 md:py-4">
+        <span class="text-[11px] md:text-[14px] font-bold text-[#3B2922] mb-3 text-center tracking-tight">Choose Your Experience</span>
+        
+        <div class="w-full max-w-3xl flex flex-col items-center mb-6">
+          <h2 class="inline-block mb-4 px-4 py-1 bg-pink-50 text-[#0061bc] text-[20px] font-bold uppercase tracking-widest rounded-full">Get Your Tickets</h2>
+          
+          <div class="flex flex-col md:flex-row gap-4 w-full">
+            
+            <!-- VIP Seating Ticket -->
+            <div class="w-full bg-white rounded-[20px] p-6 shadow-sm border border-[#f0ede8] transition-all duration-200">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-left max-w-[65%] md:max-w-[70%]">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="font-bold text-[#1f2937] leading-tight text-[16px]">VIP Seating</h3>
+                  </div>
+                  <div class="mt-1.5 py-[2px] text-[#8b7367] font-bold leading-snug text-[12px]">Seating</div>
+                </div>
+                <div class="text-right">
+                  <span class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 5,000</span>
+                  <p class="text-[#8b7367] text-[10px] mt-0.5">per person</p>
+                </div>
+              </div>
+              <div class="flex items-center border-t border-[#f5f0eb] pt-4 mt-4 justify-between">
+                <span class="text-[11px] font-semibold text-blue-600 uppercase tracking-wide">Early Bird Available</span>
+                <button onclick="openPreRegModal('VIP Seating Ticket - LKR 5,000')" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95">
+                  Register Now
+                </button>
+              </div>
+            </div>
+
+            <!-- General Standing Ticket -->
+            <div class="w-full bg-white rounded-[20px] p-6 shadow-sm border border-[#f0ede8] transition-all duration-200">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-left max-w-[65%] md:max-w-[70%]">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="font-bold text-[#1f2937] leading-tight text-[16px]">General Standing</h3>
+                  </div>
+                  <div class="mt-1.5 py-[2px] text-[#8b7367] font-bold leading-snug text-[12px]">Standing</div>
+                </div>
+                <div class="text-right">
+                  <span class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 3,000</span>
+                  <p class="text-[#8b7367] text-[10px] mt-0.5">per person</p>
+                </div>
+              </div>
+              <div class="flex items-center border-t border-[#f5f0eb] pt-4 mt-4 justify-between">
+                <span class="text-[11px] font-semibold text-blue-600 uppercase tracking-wide">Early Bird Available</span>
+                <button onclick="openPreRegModal('General Standing Ticket - LKR 3,000')" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95">
+                  Register Now
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="w-full max-w-3xl flex items-center gap-4 mb-2">
+          <div class="flex-1 h-px bg-[#e8d5c4]"></div>
+          <span class="text-[#c4a99a] text-xs font-medium tracking-widest uppercase">Add-ons</span>
+          <div class="flex-1 h-px bg-[#e8d5c4]"></div>
+        </div>
+
+        <div class="w-full max-w-3xl flex flex-col items-center">
+          <h2 class="text-[30px] md:text-[38px] font-bold text-[#3B2922] mb-2 text-center tracking-tight">Heena Shuttle Package</h2>
+          <p class="text-[#8b7367] text-sm text-center mb-4 max-w-sm">Seamless travel to Heena with our dedicated shuttle service.</p>
+          
+          <div class="w-full max-w-sm">
+            <div class="w-full bg-white rounded-[20px] p-6 shadow-sm border border-[#f0ede8] transition-all duration-200">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-left max-w-[65%] md:max-w-[70%]">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="font-bold text-[#1f2937] leading-tight text-[16px]">Transport Package</h3>
+                  </div>
+                  <div class="mt-1.5 py-[2px] text-[#8b7367] font-bold leading-snug text-[9px]">Shuttle Service. Free water bottle and complimentary espresso.</div>
+                </div>
+                <div class="text-right">
+                  <span class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 3,000</span>
+                  <p class="text-[#8b7367] text-[10px] mt-0.5">per person</p>
+                </div>
+              </div>
+              <div class="flex items-center border-t border-[#f5f0eb] pt-4 mt-4 justify-between">
+                <span class="text-[11px] font-semibold text-blue-600 uppercase tracking-wide">Early Bird Available</span>
+                <button onclick="openPreRegModal('Heena Shuttle Package - LKR 3,000')" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95">
+                  Register Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- ================= PRESENTED BY & ARTISTS ================= -->
+    <section class="w-full py-16 bg-white flex justify-center">
+      <div class="container px-4 md:px-6">
+        
+        <div class="mb-14">
+          <h3 class="text-[28px] md:text-3xl font-bold mb-6 text-black tracking-tight">Presented by</h3>
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <div class="w-[100px] h-[100px] flex-shrink-0 flex items-center justify-center rounded-full border border-gray-200 bg-white overflow-hidden relative shadow-sm">
+              <img alt="24/25 FAS Batch" src="C:\Users\rocha\Downloads\Heena\yasakA.png" class="w-full h-full object-cover" />
+            </div>
+            <div class="max-w-5xl pt-2">
+              <h4 class="font-bold text-[18px] text-black mb-3">24/25 Applied Science Batch </h4>
+              <p class="text-sm md:text-base text-[#5f6368] leading-relaxed text-justify">
+                Driven by raw talent and unshakeable brotherhood, යහපත් සහෝදර කැල is a dynamic collective turning shared passion into unforgettable live experiences. From effortless coordination to high-energy creative productions, we embody the true spirit of our batch living, creating, and performing as one.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-[28px] md:text-3xl font-bold mb-8 text-black tracking-tight">Artists</h3>
+          
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 overflow-hidden rounded-full border border-gray-200 shadow-sm">
+                <img alt="Chamupathi Udugama " src="C:\Users\rocha\Downloads\Heena\Chamupathi Udugama.webp" class="w-full h-full object-cover" />
+              </div>
+              <div class="max-w-[8rem]">
+                <p class="text-[11px] leading-tight sm:text-sm font-medium truncate">Chamupathi Udugama</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 truncate">KeyBoad</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 overflow-hidden rounded-full border border-gray-200 shadow-sm">
+                <img alt="Upekshith Hansaja" src="C:\Users\rocha\Downloads\Heena\Upekshith Hansaja.jpeg" class="w-full h-full object-cover" />
+              </div>
+              <div class="max-w-[8rem]">
+                <p class="text-[11px] leading-tight sm:text-sm font-medium truncate">Upekshith Hansaja</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 truncate"> Lead Guitarist </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 overflow-hidden rounded-full border border-gray-200 shadow-sm">
+                <img alt="Adeesha Shehan " src="C:\Users\rocha\Downloads\Heena\Adeesha Shehan.jpeg" class="w-full h-full object-cover" />
+              </div>
+              <div class="max-w-[8rem]">
+                <p class="text-[11px] leading-tight sm:text-sm font-medium truncate">Adeesha Shehan</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 truncate">Rhythem Guitarist</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 overflow-hidden rounded-full border border-gray-200 shadow-sm">
+                <img alt="Rochana Daham" src="C:\Users\rocha\Downloads\Heena\Rochana Daham.jpeg" class="w-full h-full object-cover" />
+              </div>
+              <div class="max-w-[8rem]">
+                <p class="text-[11px] leading-tight sm:text-sm font-medium truncate">Rochana Daham</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 truncate">Bass Guitarist</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 overflow-hidden rounded-full border border-gray-200 shadow-sm">
+                <img alt="Nadeesh Sri " src="C:\Users\rocha\Downloads\Heena\Nadeesh Sri.jpeg" class="w-full h-full object-cover" />
+              </div>
+              <div class="max-w-[8rem]">
+                <p class="text-[11px] leading-tight sm:text-sm font-medium truncate">Nadeesh Sri</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 truncate">Drummer</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 overflow-hidden rounded-full border border-gray-200 shadow-sm">
+                <img alt="Venura Damsara" src="C:\Users\rocha\Downloads\Heena\Venura Damsara.jpeg" class="w-full h-full object-cover" />
+              </div>
+              <div class="max-w-[8rem]">
+                <p class="text-[11px] leading-tight sm:text-sm font-medium truncate">Venura Damsara</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 truncate">percussionist</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EXACT MERCHANDISING SECTION ================= -->
+    <div class="w-full h-auto px-3 md:mx-12 flex flex-col items-center py-10 bg-gradient-to-b from-white via-gray-50 to-gray-900/90 relative overflow-hidden">
+      
+      <!-- 9:16 BACKGROUND VIDEO (Replace 'videos/your-video.mp4' with your actual video path) -->
+      <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0">
+        <source src="C:\Users\rocha\Downloads\Heena\BG VIDEO.mp4" type="video/mp4" />
+      </video>
+      
+      <!-- Merchandising Showcase Card Carousel Frame -->
+      <div class="relative z-10 group overflow-hidden rounded-[2.5rem] h-[500px] md:h-[600px] w-full max-w-md md:max-w-xl mx-auto shadow-2xl border border-gray-200/40">
+        
+        <!-- Animated Image Slideshow -->
+        <div id="merch-carousel" class="absolute inset-0 w-full h-full">
+          <img src="C:\Users\rocha\Downloads\Heena\1.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" alt="Merch 1" />
+          <img src="C:\Users\rocha\Downloads\Heena\2.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 2" />
+          <img src="C:\Users\rocha\Downloads\Heena\3.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 3" />
+          <img src="C:\Users\rocha\Downloads\Heena\4.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 4" />
+          <img src="C:\Users\rocha\Downloads\Heena\5.jpeg" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 5" />
+          <img src="C:\Users\rocha\Downloads\Heena\6.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 6" />
+          <img src="C:\Users\rocha\Downloads\Heena\7.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 7" />
+          <img src="C:\Users\rocha\Downloads\Heena\8.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 8" />
+          <img src="C:\Users\rocha\Downloads\Heena\9.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 9" />
+          <img src="C:\Users\rocha\Downloads\Heena\10.webp" class="merch-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Merch 10" />
+        </div>
+        
+        <!-- Floating Decorative Araliya Flowers over card -->
+        <div class="absolute top-4 left-1/3 w-8 h-8 pointer-events-none drop-shadow-md z-10">
+          <svg viewBox="0 0 100 100" class="w-full h-full"><use href="#araliya-flower"/></svg>
+        </div>
+        <div class="absolute top-1/4 right-8 w-6 h-6 pointer-events-none drop-shadow-md z-10">
+          <svg viewBox="0 0 100 100" class="w-full h-full"><use href="#araliya-flower"/></svg>
+        </div>
+
+        <!-- Dark Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none z-10"></div>
+
+        <!-- Exact Merchandise Overlay Content -->
+        <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full flex flex-col items-center text-center z-20">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">Official Merchandise</h3>
+          <p class="text-white/80 text-sm md:text-base max-w-xs md:max-w-md leading-relaxed">
+            Your favorite designs are now available. Explore our latest apparel, books, and mugs fresh, high-quality products.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Detailed Catalog Grid -->
+<div class="relative z-10 w-full max-w-6xl flex flex-col items-center mt-12 mb-6 px-2 md:px-4">
+  <h2 class="inline-block mb-6 px-4 py-1 bg-pink-50 text-[#0061bc] text-[20px] font-bold uppercase tracking-widest rounded-full">
+    Merchandise
+  </h2>
+
+  <div class="w-full flex flex-col gap-8">
+    
+    <!-- T-Shirts -->
+    <div class="w-full">
+      <div class="mb-3 flex items-center justify-between">
+        <h3 class="text-[16px] md:text-[18px] font-extrabold text-[#ffffff] tracking-tight">T-Shirts</h3>
+        <div class="hidden md:block h-px flex-1 bg-[#e8d5c4] ml-4"></div>
+      </div>
+      
+      <div class="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 w-full">
+        
+        <!-- Tshirt - Ocean Blue -->
+        <div class="w-full md:w-[340px] lg:w-[360px]">
+          <div class="w-full rounded-[22px] bg-white border border-[#f0ede8] shadow-sm p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3 class="font-extrabold text-[#1f2937] text-[16px] leading-tight truncate">Tshirt - Ocean Blue</h3>
+                <p class="mt-2 text-[#8b7367] text-[12px] leading-snug">Free Size</p>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <div class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 3,000</div>
+                <div class="text-[#8b7367] text-[10px] mt-1">per item</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-[#f5f0eb] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">In Stock</span>
+              <a href="store.html#store" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95 inline-block">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tshirt - Sea Green -->
+        <div class="w-full md:w-[340px] lg:w-[360px]">
+          <div class="w-full rounded-[22px] bg-white border border-[#f0ede8] shadow-sm p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3 class="font-extrabold text-[#1f2937] text-[16px] leading-tight truncate">Tshirt - Sea Green</h3>
+                <p class="mt-2 text-[#8b7367] text-[12px] leading-snug">Free Size</p>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <div class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 3,000</div>
+                <div class="text-[#8b7367] text-[10px] mt-1">per item</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-[#f5f0eb] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">In Stock</span>
+              <a href="store.html#store" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95 inline-block">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mugs -->
+    <div class="w-full">
+      <div class="mb-3 flex items-center justify-between">
+        <h3 class="text-[16px] md:text-[18px] font-extrabold text-[#FFFFFF] tracking-tight">Mugs</h3>
+        <div class="hidden md:block h-px flex-1 bg-[#e8d5c4] ml-4"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 w-full">
+        
+        <!-- Mug - Yellow -->
+        <div class="w-full md:w-[340px] lg:w-[360px]">
+          <div class="w-full rounded-[22px] bg-white border border-[#f0ede8] shadow-sm p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3 class="font-extrabold text-[#1f2937] text-[16px] leading-tight truncate">Mug - Yellow</h3>
+                <p class="mt-2 text-[#8b7367] text-[12px] leading-snug">Ceramic Mug</p>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <div class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 1,000</div>
+                <div class="text-[#8b7367] text-[10px] mt-1">per item</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-[#f5f0eb] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">In Stock</span>
+              <a href="store.html#store" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95 inline-block">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mug - Blue -->
+        <div class="w-full md:w-[340px] lg:w-[360px]">
+          <div class="w-full rounded-[22px] bg-white border border-[#f0ede8] shadow-sm p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3 class="font-extrabold text-[#1f2937] text-[16px] leading-tight truncate">Mug - Blue</h3>
+                <p class="mt-2 text-[#8b7367] text-[12px] leading-snug">Ceramic Mug</p>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <div class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 1,000</div>
+                <div class="text-[#8b7367] text-[10px] mt-1">per item</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-[#f5f0eb] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">In Stock</span>
+              <a href="store.html#store" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95 inline-block">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scarves -->
+    <div class="w-full">
+      <div class="mb-3 flex items-center justify-between">
+        <h3 class="text-[16px] md:text-[18px] font-extrabold text-[#FFFFFF] tracking-tight">Scarves</h3>
+        <div class="hidden md:block h-px flex-1 bg-[#e8d5c4] ml-4"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 w-full">
+        
+        <!-- Scarves - Yellow -->
+        <div class="w-full md:w-[340px] lg:w-[360px]">
+          <div class="w-full rounded-[22px] bg-white border border-[#f0ede8] shadow-sm p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3 class="font-extrabold text-[#1f2937] text-[16px] leading-tight truncate">Scarves - Yellow</h3>
+                <p class="mt-2 text-[#8b7367] text-[12px] leading-snug">Cotton Scarf</p>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <div class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 900</div>
+                <div class="text-[#8b7367] text-[10px] mt-1">per item</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-[#f5f0eb] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">In Stock</span>
+              <a href="store.html#store" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95 inline-block">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scarves - Red -->
+        <div class="w-full md:w-[340px] lg:w-[360px]">
+          <div class="w-full rounded-[22px] bg-white border border-[#f0ede8] shadow-sm p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3 class="font-extrabold text-[#1f2937] text-[16px] leading-tight truncate">Scarves - Red</h3>
+                <p class="mt-2 text-[#8b7367] text-[12px] leading-snug">Cotton Scarf</p>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <div class="font-extrabold text-[18px] leading-none text-[#1f2937]">LKR 900</div>
+                <div class="text-[#8b7367] text-[10px] mt-1">per item</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-[#f5f0eb] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">In Stock</span>
+              <a href="store.html#store" class="px-5 py-2 rounded-full bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-[12px] uppercase tracking-wider transition-all duration-200 shadow-md active:scale-95 inline-block">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ================= FOOTER ================= -->
+<footer class="relative z-10 w-full pt-10 pb-10 bg-black/70 text-white border-t border-white/10 mt-16 -mb-10 md:-mb-12 -mx-3 md:-mx-12 w-[calc(100%+1.5rem)] md:w-[calc(100%+6rem)] rounded-t-3xl rounded-b-none backdrop-blur-md">
+  <div class="container mx-auto px-4 md:px-8">
+    
+    <div class="flex items-center justify-center gap-6 mb-10">
+      <a target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all" href="https://www.facebook.com">
+        <img src="C:\Users\rocha\Downloads\Heena\fb.png" alt="Facebook" class="w-10 h-10" />
+      </a>
+      <a target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all" href="https://www.instagram.com">
+        <img src="C:\Users\rocha\Downloads\Heena\insta.png" alt="Instagram" class="w-10 h-10" />
+      </a>
+      <a target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all" href="https://www.tiktok.com">
+        <img src="C:\Users\rocha\Downloads\Heena\tiktok.png" alt="TikTok" class="w-10 h-10" />
+      </a>
+      <a target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all" href="https://wa.me/94777203169">
+        <img src="C:\Users\rocha\Downloads\Heena\whatsapp.png" alt="WhatsApp" class="w-10 h-10" />
+      </a>
+    </div>
+
+    <hr class="border-white/20 mb-6">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-[13.5px] text-gray-300">
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 lg:gap-6">
+        <span class="hover:text-pink-300 cursor-pointer">Privacy Policy</span>
+        <span class="hover:text-pink-300 cursor-pointer">Terms and Conditions</span>
+        <span class="hover:text-pink-300 cursor-pointer">Contact</span>
+      </div>
+      <div class="flex items-center justify-center">
+        <p>Powered by <a href="C:\Users\rocha\Downloads\Heena\Brick dev.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-pink-300">Team Brik</a></p>
+      </div>
+      <div class="flex items-center justify-center md:justify-end">
+        <p>© 2026 Brik Dev. All rights reserved.</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- Auto-play script for Merchandise Card Showcase -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.merch-slide');
+      let currentIndex = 0;
+
+      if (slides.length > 0) {
+        setInterval(() => {
+          slides[currentIndex].classList.add('opacity-0');
+          slides[currentIndex].classList.remove('opacity-100');
+          
+          currentIndex = (currentIndex + 1) % slides.length;
+          
+          slides[currentIndex].classList.remove('opacity-0');
+          slides[currentIndex].classList.add('opacity-100');
+        }, 3200);
+      }
+    });
+  </script>
+    <!-- ================= INVISIBLE BACKGROUND AUDIO LOOP ================= -->
+<audio id="bg-audio" loop preload="auto" style="display: none;">
+  <!-- Replace with your actual audio path -->
+  <source src="C:\Users\rocha\Downloads\Heena\soundtrack.mp3" type="audio/mpeg" />
+</audio>
+
+<script>
+  (function() {
+    function initHiddenAudio() {
+      const audio = document.getElementById('bg-audio');
+      if (!audio) return;
+
+      // Set background volume (0.35 = 35%)
+      audio.volume = 0.35;
+
+      const playAudio = () => {
+        audio.play().catch(() => {});
+      };
+
+      // Try playing immediately on load
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise.catch(() => {
+          // If browser blocks unmuted load, start silently on first user interaction
+          const unlock = () => {
+            playAudio();
+            window.removeEventListener('click', unlock);
+            window.removeEventListener('scroll', unlock);
+            window.removeEventListener('touchstart', unlock);
+          };
+
+          window.addEventListener('click', unlock, { once: true });
+          window.addEventListener('scroll', unlock, { once: true });
+          window.addEventListener('touchstart', unlock, { once: true });
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHiddenAudio);
+    } else {
+      initHiddenAudio();
+    }
+  })();
+</script>
+<!-- ================= SILENT GOOGLE FORM IFRAME ================= -->
+  <iframe name="prereg_iframe" id="prereg_iframe" style="display:none;" onload="if(prereg_submitted) { handlePreRegSuccess(); }"></iframe>
+
+  <!-- ================= PRE-REGISTRATION POPUP MODAL ================= -->
+  <div id="prereg-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="relative w-full max-w-lg mx-4 bg-white rounded-[28px] p-6 sm:p-8 shadow-2xl border border-gray-100 overflow-hidden">
+      
+      <!-- Modal Close Button -->
+      <button onclick="closePreRegModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-800 p-2 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- FORM CONTENT -->
+      <div id="prereg-form-content">
+        <div class="mb-6 text-left">
+          <span class="px-3 py-1 rounded-full bg-blue-50 text-[#0061bc] text-[11px] font-extrabold uppercase tracking-widest">
+            Early Access Registration
+          </span>
+          <h3 class="text-2xl font-bold text-gray-900 tracking-tight mt-2">Heena Pre Registration</h3>
+          <p class="text-xs text-gray-500 mt-1">Get prioritized notification as soon as fresh slots or restocks open.</p>
+        </div>
+
+        <!-- GOOGLE FORM (Replace action URL and entry.XXXXXX IDs with your Google Form values) -->
+        <form action="https://forms.gle/Zfn1tTNr9FS85uFY8" method="POST" target="prereg_iframe" onsubmit="prereg_submitted=true;" class="space-y-3.5 text-left">
+          
+          <!-- 1. Selected Item -->
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">Selected Item / Ticket</label>
+            <input type="text" id="selected-item-input" name="entry.1000000001" readonly class="w-full bg-gray-100 border border-gray-200 text-[#0061bc] font-bold text-xs px-4 py-2.5 rounded-xl focus:outline-none cursor-not-allowed">
+          </div>
+
+          <!-- 2. Full Name -->
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">Full Name</label>
+            <input type="text" name="entry.1000000002" required placeholder="e.g. Kasun Perera" class="w-full bg-white border border-gray-200 text-gray-900 text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-[#0061bc] transition-colors">
+          </div>
+
+          <!-- 3. Student Id no -->
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">Student ID No</label>
+            <input type="text" name="entry.1000000003" required placeholder="e.g. 2021/ASP/42" class="w-full bg-white border border-gray-200 text-gray-900 text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-[#0061bc] transition-colors">
+          </div>
+
+          <!-- 4. Email Address -->
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">Email Address</label>
+            <input type="email" name="entry.1000000004" required placeholder="kasun@gmail.com" class="w-full bg-white border border-gray-200 text-gray-900 text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-[#0061bc] transition-colors">
+          </div>
+
+          <!-- 5. WhatsApp Number -->
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">WhatsApp Number</label>
+            <input type="tel" name="entry.1000000005" required placeholder="077 123 4567" class="w-full bg-white border border-gray-200 text-gray-900 text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-[#0061bc] transition-colors">
+          </div>
+
+          <!-- 6. Preferred Quantity -->
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">Preferred Quantity</label>
+            <input type="text" name="entry.1000000006" required placeholder="e.g. 1" class="w-full bg-white border border-gray-200 text-gray-900 text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-[#0061bc] transition-colors">
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-3.5 mt-2 bg-[#0061bc] hover:bg-blue-700 text-white font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all duration-300 shadow-md active:scale-95">
+            Submit Pre-Registration
+          </button>
+        </form>
+      </div>
+
+      <!-- SUCCESS CONFIRMATION STATE -->
+      <div id="prereg-success-content" class="hidden text-center py-8 space-y-4">
+        <div class="w-16 h-16 bg-blue-50 border border-blue-200 rounded-full flex items-center justify-center mx-auto text-[#0061bc]">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 tracking-tight">You're On The Priority List!</h3>
+        <p class="text-xs text-gray-500 leading-relaxed max-w-sm mx-auto">
+          Thank you for pre-registering. As soon as additional tickets or merchandise become available, we will reach out to your WhatsApp or Email.
+        </p>
+        <button onclick="closePreRegModal()" class="px-6 py-2.5 bg-gray-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors">
+          Done
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC FOR CAROUSEL & PRE-REGISTRATION MODAL -->
+  <script>
+    // Merchandise Carousel Script
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.merch-slide');
+      let currentIndex = 0;
+
+      if (slides.length > 0) {
+        setInterval(() => {
+          slides[currentIndex].classList.add('opacity-0');
+          slides[currentIndex].classList.remove('opacity-100');
+          
+          currentIndex = (currentIndex + 1) % slides.length;
+          
+          slides[currentIndex].classList.remove('opacity-0');
+          slides[currentIndex].classList.add('opacity-100');
+        }, 3200);
+      }
+    });
+
+    // Pre-Registration Modal Logic
+    let prereg_submitted = false;
+
+    function openPreRegModal(itemName) {
+      const modal = document.getElementById('prereg-modal');
+      const input = document.getElementById('selected-item-input');
+      
+      if (input) {
+        input.value = itemName;
+      }
+
+      modal.classList.remove('hidden');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    }
+
+    function closePreRegModal() {
+      const modal = document.getElementById('prereg-modal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.getElementById('prereg-form-content').classList.remove('hidden');
+        document.getElementById('prereg-success-content').classList.add('hidden');
+        prereg_submitted = false;
+      }, 300);
+    }
+
+    function handlePreRegSuccess() {
+      document.getElementById('prereg-form-content').classList.add('hidden');
+      document.getElementById('prereg-success-content').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
